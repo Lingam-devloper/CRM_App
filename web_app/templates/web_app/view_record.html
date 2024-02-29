@@ -1,0 +1,27 @@
+{%extends 'web_app/base.html'%}
+
+{%block content%}
+<div class="card">
+    <div class="card-body">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+   <strong>{{record.first_name|upper}} {{record.last_name |upper}}</strong>
+        <p><strong>ID:</strong>{{record.id}}</p>
+        <p><strong>Email:</strong>{{record.email}}</p>
+        <p><strong>Mobile:</strong>{{record.mobile}}</p>
+        <p><strong>Province:</strong>{{record.province}}</p>
+        <p><strong>Address:</strong>{{record.address}}</p>
+        <p><strong>City:</strong>{{record.city}}</p>
+        <p><strong>Country:</strong>{{record.country}}</p>
+        <p><strong>Date_joined:</strong>{{record.creation_date}}</p>
+    </div>
+</div>
+<br>
+<a href="{% url 'dashboard' %}" class="btn btn-secondary"> 
+    Back&nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i>
+</a>
+    &nbsp;
+<a href="{% url 'update-record' record.id %}" class="btn btn-info">Update Record&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
+&nbsp;
+<a class="btn btn-danger" href="{% url 'delete-record' record.id %}">Delete Record&nbsp;<i class="fa fa-minus-square" aria-hidden="true"></i></a>
+&nbsp;
+{%endblock%}
